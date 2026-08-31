@@ -1,0 +1,302 @@
+{
+  "eleicao": {
+    "ano": 2026,
+    "turno": 1,
+    "descricao": "Eleições Gerais 2026 - Brasil"
+  },
+  "cargos": [
+    {
+      "id": "presidente",
+      "cargo": "PRESIDENTE",
+      "digitos": 2,
+      "descricao": "Presidente da República",
+      "candidatos": [
+        {
+          "numero": "13",
+          "nome": "LULA",
+          "nomeCompleto": "LUIZ INÁCIO LULA DA SILVA",
+          "partido": "PARTIDO DOS TRABALHADORES",
+          "siglaPartido": "PT",
+          "vice": "GERALDO ALCKMIN",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#e32027"
+        },
+        {
+          "numero": "22",
+          "nome": "BOLSONARO",
+          "nomeCompleto": "JAIR MESSIAS BOLSONARO",
+          "partido": "PARTIDO LIBERAL",
+          "siglaPartido": "PL",
+          "vice": "GENERAL BRAGA NETTO",
+          "estado": "RJ",
+          "foto": "",
+          "cor": "#003087"
+        },
+        {
+          "numero": "20",
+          "nome": "CIRO",
+          "nomeCompleto": "CIRO FERREIRA GOMES",
+          "partido": "PARTIDO DEMOCRÁTICO TRABALHISTA",
+          "siglaPartido": "PDT",
+          "vice": "A DEFINIR",
+          "estado": "CE",
+          "foto": "",
+          "cor": "#e80914"
+        },
+        {
+          "numero": "15",
+          "nome": "SIMONE",
+          "nomeCompleto": "SIMONE NASSAR TEBET",
+          "partido": "MOVIMENTO DEMOCRÁTICO BRASILEIRO",
+          "siglaPartido": "MDB",
+          "vice": "A DEFINIR",
+          "estado": "MS",
+          "foto": "",
+          "cor": "#009b3a"
+        },
+        {
+          "numero": "44",
+          "nome": "ZEMA",
+          "nomeCompleto": "ROMEU ZEMA NETO",
+          "partido": "PARTIDO NOVO",
+          "siglaPartido": "NOVO",
+          "vice": "A DEFINIR",
+          "estado": "MG",
+          "foto": "",
+          "cor": "#f7941d"
+        },
+        {
+          "numero": "30",
+          "nome": "DÓRIA",
+          "nomeCompleto": "JOÃO AGRIPINO DA COSTA DÓRIA JUNIOR",
+          "partido": "PARTIDO NOVO",
+          "siglaPartido": "NOVO",
+          "vice": "A DEFINIR",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#f7941d"
+        }
+      ]
+    },
+    {
+      "id": "governador",
+      "cargo": "GOVERNADOR",
+      "digitos": 2,
+      "descricao": "Governador do Estado de São Paulo",
+      "candidatos": [
+        {
+          "numero": "13",
+          "nome": "MÁRCIO FRANÇA",
+          "nomeCompleto": "MÁRCIO ALVINO LIMA E SILVA FRANÇA",
+          "partido": "PARTIDO DOS TRABALHADORES",
+          "siglaPartido": "PT",
+          "vice": "A DEFINIR",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#e32027"
+        },
+        {
+          "numero": "10",
+          "nome": "TARCÍSIO",
+          "nomeCompleto": "TARCÍSIO GOMES DE FREITAS",
+          "partido": "REPUBLICANOS",
+          "siglaPartido": "REP",
+          "vice": "A DEFINIR",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#002776"
+        },
+        {
+          "numero": "45",
+          "nome": "GUILHERME BOULOS",
+          "nomeCompleto": "GUILHERME CASTRO BOULOS",
+          "partido": "PARTIDO SOCIALISMO E LIBERDADE",
+          "siglaPartido": "PSOL",
+          "vice": "A DEFINIR",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#8b1a1a"
+        },
+        {
+          "numero": "15",
+          "nome": "BALEIA ROSSI",
+          "nomeCompleto": "MARCELO ARGENTINA ROSSI",
+          "partido": "MOVIMENTO DEMOCRÁTICO BRASILEIRO",
+          "siglaPartido": "MDB",
+          "vice": "A DEFINIR",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#009b3a"
+        }
+      ]
+    },
+    {
+      "id": "senador",
+      "cargo": "SENADOR",
+      "digitos": 3,
+      "descricao": "Senador da República - São Paulo",
+      "candidatos": [
+        {
+          "numero": "130",
+          "nome": "JUCA BRAGA",
+          "nomeCompleto": "PAULO JUCA BRAGA",
+          "partido": "PARTIDO DOS TRABALHADORES",
+          "siglaPartido": "PT",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#e32027"
+        },
+        {
+          "numero": "221",
+          "nome": "ROGÉRIO MARINHO",
+          "nomeCompleto": "ROGÉRIO SIMONETTI MARINHO",
+          "partido": "PARTIDO LIBERAL",
+          "siglaPartido": "PL",
+          "vice": "",
+          "estado": "RN",
+          "foto": "",
+          "cor": "#003087"
+        },
+        {
+          "numero": "150",
+          "nome": "SIMONE TEBET",
+          "nomeCompleto": "SIMONE NASSAR TEBET",
+          "partido": "MOVIMENTO DEMOCRÁTICO BRASILEIRO",
+          "siglaPartido": "MDB",
+          "vice": "",
+          "estado": "MS",
+          "foto": "",
+          "cor": "#009b3a"
+        },
+        {
+          "numero": "200",
+          "nome": "CIRO NOGUEIRA",
+          "nomeCompleto": "CIRO NOGUEIRA LIMA",
+          "partido": "PROGRESSISTAS",
+          "siglaPartido": "PP",
+          "vice": "",
+          "estado": "PI",
+          "foto": "",
+          "cor": "#1a5276"
+        }
+      ]
+    },
+    {
+      "id": "deputado_federal",
+      "cargo": "DEPUTADO FEDERAL",
+      "digitos": 4,
+      "descricao": "Deputado Federal - São Paulo",
+      "candidatos": [
+        {
+          "numero": "1301",
+          "nome": "GLEISI HOFFMANN",
+          "nomeCompleto": "GLEISI HELENA HOFFMANN",
+          "partido": "PARTIDO DOS TRABALHADORES",
+          "siglaPartido": "PT",
+          "vice": "",
+          "estado": "PR",
+          "foto": "",
+          "cor": "#e32027"
+        },
+        {
+          "numero": "2211",
+          "nome": "SOARES JÚNIOR",
+          "nomeCompleto": "MARCOS SOARES JÚNIOR",
+          "partido": "PARTIDO LIBERAL",
+          "siglaPartido": "PL",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#003087"
+        },
+        {
+          "numero": "2020",
+          "nome": "KIM KATAGUIRI",
+          "nomeCompleto": "KIM YE NA KATAGUIRI",
+          "partido": "UNIÃO BRASIL",
+          "siglaPartido": "UNIÃO",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#f7941d"
+        },
+        {
+          "numero": "1010",
+          "nome": "CELSO RUSSOMANNO",
+          "nomeCompleto": "CELSO UBIRAJARA RUSSOMANNO",
+          "partido": "REPUBLICANOS",
+          "siglaPartido": "REP",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#002776"
+        },
+        {
+          "numero": "5555",
+          "nome": "TABATA AMARAL",
+          "nomeCompleto": "TABATA AMARAL DE PONTES E PEDRO",
+          "partido": "PARTIDO SOCIALISTA DEMOCRÁTICO",
+          "siglaPartido": "PSD",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#ffd700"
+        }
+      ]
+    },
+    {
+      "id": "deputado_estadual",
+      "cargo": "DEPUTADO ESTADUAL",
+      "digitos": 5,
+      "descricao": "Deputado Estadual - São Paulo",
+      "candidatos": [
+        {
+          "numero": "13010",
+          "nome": "JOSE ANTONIO",
+          "nomeCompleto": "JOSE ANTONIO SILVA SANTOS",
+          "partido": "PARTIDO DOS TRABALHADORES",
+          "siglaPartido": "PT",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#e32027"
+        },
+        {
+          "numero": "22100",
+          "nome": "MARCOS VIEIRA",
+          "nomeCompleto": "MARCOS ANTONIO VIEIRA LIMA",
+          "partido": "PARTIDO LIBERAL",
+          "siglaPartido": "PL",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#003087"
+        },
+        {
+          "numero": "15222",
+          "nome": "ANA PAULA",
+          "nomeCompleto": "ANA PAULA RODRIGUES FERREIRA",
+          "partido": "MOVIMENTO DEMOCRÁTICO BRASILEIRO",
+          "siglaPartido": "MDB",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#009b3a"
+        },
+        {
+          "numero": "10100",
+          "nome": "LUCAS BOVE",
+          "nomeCompleto": "LUCAS BOVE SANTOS",
+          "partido": "REPUBLICANOS",
+          "siglaPartido": "REP",
+          "vice": "",
+          "estado": "SP",
+          "foto": "",
+          "cor": "#002776"
+        }
+      ]
+    }
+  ]
+}

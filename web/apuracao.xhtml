@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Apuração de Votos - UrnaBrasil</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap"/>
+        <style>
+            body {
+                background: #f4f6f8;
+                font-family: 'Inter', sans-serif;
+                margin: 0; padding: 20px;
+                color: #333;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                max-width: 800px;
+                width: 100%;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+                padding: 30px;
+            }
+            h1 {
+                text-align: center;
+                color: #1565c0;
+                margin-top: 0;
+            }
+            .cargo-section {
+                margin-top: 30px;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .cargo-header {
+                background: #1565c0;
+                color: white;
+                padding: 15px 20px;
+                font-size: 18px;
+                font-weight: 600;
+                display: flex;
+                justify-content: space-between;
+            }
+            .candidato-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 20px;
+                border-bottom: 1px solid #eee;
+            }
+            .candidato-row:last-child {
+                border-bottom: none;
+            }
+            .c-nome { font-weight: 600; flex: 2; }
+            .c-votos { flex: 1; text-align: center; color: #555; }
+            .c-perc { flex: 1; text-align: right; font-weight: 800; color: #2e7d32; }
+            
+            .bar-container {
+                width: 100%;
+                background: #e0e0e0;
+                height: 6px;
+                border-radius: 3px;
+                margin-top: 5px;
+            }
+            .bar-fill {
+                height: 100%;
+                background: #4caf50;
+                border-radius: 3px;
+            }
+            
+            .btn-voltar {
+                display: inline-block;
+                margin-bottom: 20px;
+                padding: 10px 20px;
+                background: #e0e0e0;
+                color: #333;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: 600;
+            }
+            .btn-voltar:hover { background: #d0d0d0; }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <a href="index.xhtml" class="btn-voltar">← Voltar para Urna</a>
+            
+            <h1>📊 Resultado da Apuração</h1>
+            
+            <h:panelGroup rendered="#{empty apuracaoBean.resultadosPorCargo}">
+                <div style="text-align:center; padding: 40px; color:#888;">
+                    Nenhum voto foi registrado ainda no servidor.
+                </div>
+            </h:panelGroup>
+
+            <ui:repeat value="#{apuracaoBean.resultadosPorCargo}" var="cargo">
+                <div class="cargo-section">
+                    <div class="cargo-header">
+                        <span>#{cargo.cargo}</span>
+                        <span>Total de Votos: #{cargo.totalVotos}</span>
+                    </div>
+                    
+                    <ui:repeat value="#{cargo.candidatos}" var="cand">
+                        <div class="candidato-row">
+                            <div style="flex:1; width:100%;">
+                                <div style="display:flex; justify-content: space-between;">
+                                    <span class="c-nome">#{cand.nome}</span>
+                                    <span class="c-votos">#{cand.votos} voto(s)</span>
+                                    <span class="c-perc">#{cand.percentualFormatado}</span>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: #{cand.percentual}%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </ui:repeat>
+                </div>
+            </ui:repeat>
+        </div>
+    </h:body>
+</html>

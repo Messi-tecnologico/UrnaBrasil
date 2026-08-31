@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&family=Orbitron:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --body-white:        #f3f2ef;
+    --body-mid:          #e8e6e2;
+    --body-dark:         #d5d2cd;
+    --kbd-bg:            #1a1a1a;
+    --screen-lcd:        #080808;
+    --text-green:        #00e000;
+    --text-lime:         #66ff44;
+    --text-dim:          #3a9a3a;
+    --text-white:        #ddfedd;
+    --digit-bg:          #000;
+    --digit-border:      #00aa00;
+    --btn-num-top:       #3e3e3e;
+    --btn-num-bg:        #2c2c2c;
+    --btn-num-sh:        #080808;
+}
+
+html, body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #bfc0c4;
+    background: radial-gradient(ellipse at 50% 20%, #d8dae0 0%, #b8babe 50%, #9a9ca0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    padding: 24px 12px;
+    user-select: none;
+}
+
+#page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 1;
+}
+
+/* ======================================================
+   URNA — VISTA PAISAGEM (REALISTA)
+   ====================================================== */
+#urna {
+    display: flex;
+    flex-direction: row;      /* ← PAISAGEM */
+    width: 820px;             /* Mais larga */
+    height: 440px;
+    background: linear-gradient(175deg, #f8f7f4 0%, var(--body-mid) 50%, var(--body-dark) 100%);
+    border-radius: 12px 16px 16px 12px;
+    border: 2px solid #b8b6b2;
+    box-shadow:
+        0 35px 90px rgba(0,0,0,0.55),
+        0 10px 26px rgba(0,0,0,0.28),
+        inset 0 3px 5px rgba(255,255,255,0.95),
+        inset 0 -3px 6px rgba(0,0,0,0.12),
+        inset 1px 0 3px rgba(255,255,255,0.7),
+        inset -1px 0 3px rgba(0,0,0,0.07);
+    position: relative;
+}
+
+/* ======================================================
+   LADO ESQUERDO — TELA
+   ====================================================== */
+#urna-left-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+#screen-frame {
+    background: var(--screen-lcd);
+    border-radius: 6px;
+    border: 4px solid #1a1a1a;
+    box-shadow:
+        inset 0 0 28px rgba(0,0,0,0.98),
+        0 3px 10px rgba(0,0,0,0.6),
+        0 1px 3px rgba(0,0,0,0.9);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#screen-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.07) 3px, rgba(0,0,0,0.07) 4px);
+    pointer-events: none;
+    z-index: 50;
+}
+
+#urna-screen {
+    padding: 18px 22px;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#cargo-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(0,200,0,0.12); padding-bottom: 5px; }
+#cargo-titulo { font-family: 'Share Tech Mono', monospace; font-size: 20px; color: var(--text-green); letter-spacing: 2px; }
+#cargo-descricao { font-family: 'Inter', sans-serif; font-size: 9px; color: var(--text-dim); }
+
+#numero-label { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--text-dim); margin-top: 10px; }
+#digitos-wrapper { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+.digito-box {
+    width: 50px; height: 64px; background: var(--digit-bg); border: 2px solid var(--digit-border);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    font-family: 'VT323', monospace; font-size: 50px; color: var(--text-green);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.95), 0 0 5px rgba(0,200,0,0.1);
+}
+.digito-box.active { border-color: #00ff44; }
+.digito-box.vazio::after { content: '_'; color: rgba(0,180,0,0.35); font-size: 44px; animation: blink-cursor 1s step-start infinite; }
+@keyframes blink-cursor { 50% { opacity: 0; } }
+
+#candidato-section { display: none; gap: 12px; align-items: flex-start; padding-top: 10px; border-top: 1px solid rgba(0,200,0,0.1); }
+#candidato-section.visible { display: flex; }
+#candidato-avatar {
+    width: 80px; height: 95px; border: 2px solid var(--digit-border); border-radius: 4px; background: #000;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;
+}
+#candidato-avatar-initials { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 700; color: var(--text-green); }
+#candidato-avatar-partido { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); margin-top: 4px; }
+
+#candidato-info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+#candidato-nome-urna { font-family: 'Share Tech Mono', monospace; font-size: 20px; color: var(--text-green); }
+#candidato-nome-completo-urna { font-family: 'Inter', sans-serif; font-size: 9px; color: var(--text-dim); text-transform: uppercase; }
+#candidato-partido-urna { font-family: 'Inter', sans-serif; font-size: 9px; color: var(--text-white); text-transform: uppercase; margin-top: 4px; padding: 3px 6px; background: rgba(0,100,0,0.3); border: 1px solid rgba(0,180,0,0.2); border-radius: 2px; display: inline-block; width: fit-content; }
+#candidato-sigla-urna { font-family: 'Share Tech Mono', monospace; font-size: 22px; color: var(--text-green); }
+#candidato-vice-label { font-family: 'Inter', sans-serif; font-size: 8px; color: var(--text-dim); text-transform: uppercase; margin-top: 4px; display: none; }
+#candidato-vice-urna { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--text-white); display: none; }
+
+#confirmacao-box { display: none; margin-top: auto; padding: 6px 10px; border: 1px solid rgba(0,210,0,0.3); border-radius: 4px; background: rgba(0,50,0,0.4); text-align: center; }
+#confirmacao-box.visible { display: block; }
+#confirmacao-titulo { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: var(--text-lime); letter-spacing: 2px; animation: pulse-glow 1.4s infinite; }
+@keyframes pulse-glow { 0%,100% { text-shadow: 0 0 5px rgba(100,255,50,0.4); } 50% { text-shadow: 0 0 16px rgba(100,255,50,0.9); } }
+
+#urna-mensagem-texto { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; padding: 4px 0; border-top: 1px solid rgba(0,200,0,0.08); min-height: 20px; }
+#urna-mensagem-texto.destaque { color: var(--text-green); }
+#urna-mensagem-texto.erro { color: #ff5555; }
+#urna-mensagem-texto.branco { color: #dddddd; }
+
+#cargo-progress { display: flex; gap: 5px; margin-top: auto; padding-top: 8px; }
+.progress-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,200,0,0.12); border: 1px solid rgba(0,200,0,0.22); }
+.progress-dot.atual { background: var(--text-green); border-color: var(--text-green); }
+.progress-dot.feito { background: rgba(0,200,0,0.42); border-color: rgba(0,200,0,0.5); }
+
+#fim-votacao-section { display: none; flex-direction: column; gap: 6px; justify-content: center; align-items: center; height: 100%; }
+#fim-votacao-section.visible { display: flex; }
+#fim-titulo { font-family:'Inter', sans-serif; font-weight:800; font-size:110px; color:var(--text-green); letter-spacing:4px; margin-top:20px; }
+#fim-icone  { font-size: 36px; margin-bottom: 10px; }
+#votos-resumo { font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--text-dim); width: 100%; text-align: center; }
+
+#votando-overlay { display: none; position: absolute; inset: 0; background: rgba(0,4,0,0.94); z-index: 200; justify-content: center; align-items: center; flex-direction: column; gap: 12px; }
+#votando-overlay.visible { display: flex; }
+#votando-texto { font-family:'Share Tech Mono',monospace; font-size:15px; color:var(--text-green); letter-spacing:3px; animation: pulse-glow 0.5s infinite; }
+#votando-spinner { width:32px; height:32px; border:3px solid rgba(0,210,0,0.2); border-top-color:var(--text-green); border-radius:50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* ======================================================
+   LADO DIREITO — TECLADO
+   ====================================================== */
+#urna-right-panel {
+    width: 320px;
+    background: linear-gradient(180deg, #303030 0%, #151515 100%);
+    border-radius: 0 14px 14px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 25px;
+    box-shadow: inset 4px 0 10px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 10;
+}
+
+/* Sombra na divisória */
+#urna-right-panel::before {
+    content: '';
+    position: absolute;
+    left: -2px; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, transparent 100%);
+}
+
+#je-top-branding {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-right: 5px;
+}
+.je-titulo {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #e0e0e0;
+    text-align: right;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+#keyboard-panel { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; }
+#teclado { display: flex; flex-direction: column; gap: 12px; }
+.teclado-linha { display: flex; gap: 12px; justify-content: center; }
+.teclado-linha-zero { justify-content: center; margin-bottom: 5px; }
+.teclado-linha-acao { display: flex; gap: 10px; justify-content: center; align-items: flex-end; margin-top: 10px; }
+
+/* Botões base */
+.btn-urna {
+    border: none; border-radius: 5px; cursor: pointer; outline: none;
+    font-family: 'Share Tech Mono', monospace; position: relative;
+    transition: transform 0.06s, filter 0.06s;
+}
+.btn-urna::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 44%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.13) 0%, transparent 100%);
+    border-radius: 5px 5px 0 0; pointer-events: none;
+}
+.btn-urna:active { transform: translateY(3px) !important; filter: brightness(0.8); }
+
+/* Numéricos */
+.btn-numerico {
+    width: 60px; height: 45px;
+    background: linear-gradient(175deg, #3e3e3e 0%, #2c2c2c 55%, #181818 100%);
+    color: #f0f0f0; font-size: 22px;
+    box-shadow: 0 5px 0 #080808, 0 8px 15px rgba(0,0,0,0.75);
+    border: 1px solid #111;
+}
+
+/* Ação Lado a Lado */
+.btn-branco, .btn-corrige, .btn-confirma {
+    height: 48px; font-size: 11px; letter-spacing: 0.5px;
+}
+.btn-branco {
+    width: 80px;
+    background: linear-gradient(175deg, #f2f2f2 0%, #dcdcdc 55%, #b0b0b0 100%);
+    color: #1a1a1a; box-shadow: 0 5px 0 #909090, 0 7px 14px rgba(0,0,0,0.5); border: 1px solid #aaa;
+}
+.btn-corrige {
+    width: 80px;
+    background: linear-gradient(175deg, #f07010 0%, #c85a00 55%, #7a3000 100%);
+    color: #ffe8c0; box-shadow: 0 5px 0 #6a2800, 0 7px 14px rgba(0,0,0,0.65); border: 1px solid #5a2000;
+}
+.btn-confirma {
+    width: 90px; height: 56px; /* Botão Confirma é maior e fica mais baixo */
+    background: linear-gradient(175deg, #00c050 0%, #009640 55%, #006030 100%);
+    color: #d0ffd8; font-size: 12px; letter-spacing: 1px;
+    box-shadow: 0 5px 0 #004520, 0 8px 18px rgba(0,0,0,0.65); border: 1px solid #004020;
+}
+
+/* ======================================================
+   RODAPÉ EXTERNO
+   ====================================================== */
+#btn-exportar-container { display: none; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px;}
+#btn-exportar-container.visible { display: flex; }
+.btn-acao { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; padding: 10px 22px; border: none; border-radius: 8px; cursor: pointer; text-transform: uppercase; color: white; }
+#btn-exportar-txt { background: #1565c0; }
+#btn-nova-votacao { background: #2e7d32; }
+
+#atalhos-hint { font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(0,0,0,0.4); text-align: center; margin-top: 10px;}
+#atalhos-hint span { background: rgba(0,0,0,0.1); border-radius: 3px; padding: 2px 6px; margin: 0 3px; }
